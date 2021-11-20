@@ -11,6 +11,8 @@ const cutText = (text) => {
 searchIcon.addEventListener("click", () => {
   let searchInputValue = searchInput.value;
   if (!searchInputValue) return;
+  let loaderIcon = document.querySelector(".loader-section");
+  loaderIcon.style.display = "flex";
   fetch(`https://imdb-api.com/en/API/Search/k_bp53c8qv/${searchInputValue}`)
     .then((res) => res.json())
     .then((res) => {
@@ -29,6 +31,7 @@ searchIcon.addEventListener("click", () => {
             runtimeStr: movieDuration,
             image: moviePoster,
           } = res;
+          loaderIcon.style.display = "none";
           let movieDetailsElement = document.querySelector(".movie-details");
           movieDetailsElement.innerHTML = "";
           let movieTitleDiv = document.createElement("div");
