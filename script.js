@@ -51,6 +51,9 @@ searchIcon.addEventListener("click", () => {
           movieReleaseElement.innerText = `Year:${releaseYear}`;
           movieDetailsElement.appendChild(movieDescriptionElement);
           movieDetailsElement.appendChild(movieReleaseElement);
+          //////////
+          let imageSectionElement = document.querySelector(".image-section");
+          imageSectionElement.style.backgroundImage = `linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, #1d1d1d 92.27%), url(${moviePoster})`;
         });
     });
 });
