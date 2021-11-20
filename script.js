@@ -20,6 +20,23 @@ searchIcon.addEventListener("click", () => {
             runtimeStr: movieDuration,
             image: moviePoster,
           } = res;
+          let movieDetailsElement = document.querySelector(".movie-details");
+
+          let movieTitleDiv = document.createElement("div");
+          let movieNameElement = document.createElement("h1");
+          let movieDurationElement = document.createElement("p");
+          movieTitleDiv.classList.add("movie-title");
+          movieNameElement.classList.add("movie-name");
+          movieDurationElement.classList.add("movie-duration");
+
+          movieNameElement.innerText = movieTitle;
+          movieDurationElement.innerText = movieDuration;
+
+          movieTitleDiv.appendChild(movieNameElement);
+          movieTitleDiv.appendChild(movieDurationElement);
+
+          movieDetailsElement.appendChild(movieTitleDiv);
+          //////////////////////////////
         });
     });
 });
