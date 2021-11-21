@@ -1,9 +1,9 @@
-# salma-movie-API-Task
+# salma-nebal-movie-API-Task
 
 ### Before you watch the movie, get a fair overview of what it's about.
 
 You can use the app to look for a movie. The app includes the movie's description, runtime, and release year.
-
+and The app shows the top 10 box office movies. 
 ## Prerequisite Knowledge
 
 ---
@@ -12,6 +12,7 @@ You can use the app to look for a movie. The app includes the movie's descriptio
 
 ## - services does the application offer to the user:
 
+- shows the top 10 box office movies.
 - A brief summary of the film.
 - Time of the film.
 - Movie's release year.
@@ -37,13 +38,13 @@ You can use the app to look for a movie. The app includes the movie's descriptio
 
 ---
 
-https://gsg-cf04.github.io/salma-movie-API-Task/
+https://gsg-cf04.github.io/salma-nebal-movie-API-Task/
 
 ## How do I get the project on my local machine?
 
 ---
 
-### First you need to visit this [link](https://gsg-cf04.github.io/salma-movie-API-Task/) and follow these steps:
+### First you need to visit this [link](https://gsg-cf04.github.io/salma-nebal-movie-API-Task/) and follow these steps:
 
 1. Take the code link from the main branch and paste it here.
 2. In the folder where you wish to start the project, run GitBash.
@@ -57,6 +58,7 @@ https://gsg-cf04.github.io/salma-movie-API-Task/
 ---
 
 - Salma Issa .
+- Nebal Hamdan.
 
 ## Design :
 
