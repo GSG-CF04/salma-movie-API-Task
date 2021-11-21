@@ -1,5 +1,9 @@
 let searchInput = document.querySelector(".search-input");
-let searchIcon = document.querySelector("#search-icon");
+let searchIcon = document.querySelector("#search-icon");container
+let cardSection = document.querySelector(".card-section");
+let content = document.querySelector(".content");
+let officeSection=document.querySelector(".box-office-section");
+
 const cutText = (text) => {
   if (text.length > 550) {
     let cutTextResult = text.slice(0, 551);
@@ -60,3 +64,45 @@ searchIcon.addEventListener("click", () => {
         });
     });
 });
+
+
+  addEventListener('load', (event) =>{
+  fetch(
+    `https://imdb-api.com/en/API/BoxOffice/k_kg6jjxga/`
+  )
+    .then((res) => res.json())
+    .then((res) => {
+      
+      //box office 
+      let boxOffice = document.createElement("h1");
+      boxOffice.classList.add(".box-office");
+      boxOffice.innerText = "Box Office Movies";
+      officeSection.appendChild(boxOffice)
+
+      res.items.forEach((element ,index) => {
+        if(index <= 8){
+        const {
+        title: movieTitle,
+        image: moviePoster,
+      } = element;
+    
+    //div card 
+    let card = document.createElement("div");
+    card.classList.add("card");
+    // card img
+    let cardImg= document.createElement("img");
+    cardImg.src= moviePoster;
+    cardImg.classList.add("card-img");
+    // card title
+    let cardTitle = document.createElement("h4");
+    cardTitle.classList.add("crad-title");
+    
+    cardTitle.innerText = movieTitle;
+    card.appendChild(cardTitle);
+    card.appendChild(cardImg);
+    cardSection.appendChild(card);
+        }
+    });
+  });
+});
+  
