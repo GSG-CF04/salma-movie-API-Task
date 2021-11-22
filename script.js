@@ -1,5 +1,5 @@
 let searchInput = document.querySelector(".search-input");
-let searchIcon = document.querySelector("#search-icon");container
+let searchIcon = document.querySelector("#search-icon");
 let cardSection = document.querySelector(".card-section");
 let content = document.querySelector(".content");
 let officeSection=document.querySelector(".box-office-section");
@@ -36,6 +36,8 @@ searchIcon.addEventListener("click", () => {
             image: moviePoster,
           } = res;
           loaderIcon.style.display = "none";
+          cardSection.style.display="none";
+          officeSection.style.display="none"
           let movieDetailsElement = document.querySelector(".movie-details");
           movieDetailsElement.innerHTML = "";
           let movieTitleDiv = document.createElement("div");
