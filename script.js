@@ -2,7 +2,7 @@ let searchInput = document.querySelector(".search-input");
 let searchIcon = document.querySelector("#search-icon");
 let cardSection = document.querySelector(".card-section");
 let content = document.querySelector(".content");
-let officeSection=document.querySelector(".box-office-section");
+let officeSection = document.querySelector(".box-office-section");
 
 const cutText = (text) => {
   if (text.length > 550) {
@@ -17,16 +17,14 @@ searchIcon.addEventListener("click", () => {
   if (!searchInputValue) return;
   let loaderIcon = document.querySelector(".loader-section");
   loaderIcon.style.display = "flex";
-  cardSection.style.display="none";
-  officeSection.style.display="none";
-  fetch(`https://imdb-api.com/en/API/Search/k_bp53c8qv/${searchInputValue}`)
+  fetch(`https://imdb-api.com/en/API/Search/k_q44ie874/${searchInputValue}`)
     .then((res) => res.json())
     .then((res) => {
       if (!res.results) return;
       let firstItem = res.results[0];
       let movieId = firstItem.id;
       fetch(
-        `https://imdb-api.com/en/API/Title/k_bp53c8qv/${movieId}/FullActor,FullCast,Posters,Images,Trailer,Ratings,Wikipedia,`
+        `https://imdb-api.com/en/API/Title/k_q44ie874/${movieId}/FullActor,FullCast,Posters,Images,Trailer,Ratings,Wikipedia,`
       )
         .then((res) => res.json())
         .then((res) => {
@@ -38,8 +36,8 @@ searchIcon.addEventListener("click", () => {
             image: moviePoster,
           } = res;
           loaderIcon.style.display = "none";
-          cardSection.style.display="none";
-          officeSection.style.display="none";
+          cardSection.style.display = "none";
+          officeSection.style.display = "none";
           let movieDetailsElement = document.querySelector(".movie-details");
           movieDetailsElement.innerHTML = "";
           let movieTitleDiv = document.createElement("div");
@@ -69,44 +67,36 @@ searchIcon.addEventListener("click", () => {
     });
 });
 
-
-  addEventListener('load', (event) =>{
-  fetch(
-    `https://imdb-api.com/en/API/BoxOffice/k_kg6jjxga/`
-  )
+addEventListener("load", (event) => {
+  fetch(`https://imdb-api.com/en/API/BoxOffice/k_q44ie874/`)
     .then((res) => res.json())
     .then((res) => {
-      
-      //box office 
+      //box office
       let boxOffice = document.createElement("h1");
       boxOffice.classList.add(".box-office");
       boxOffice.innerText = "Box Office Movies";
-      officeSection.appendChild(boxOffice)
+      officeSection.appendChild(boxOffice);
 
-      res.items.forEach((element ,index) => {
-        if(index <= 8){
-        const {
-        title: movieTitle,
-        image: moviePoster,
-      } = element;
-    
-    //div card 
-    let card = document.createElement("div");
-    card.classList.add("card");
-    // card img
-    let cardImg= document.createElement("img");
-    cardImg.src= moviePoster;
-    cardImg.classList.add("card-img");
-    // card title
-    let cardTitle = document.createElement("h4");
-    cardTitle.classList.add("crad-title");
-    
-    cardTitle.innerText = movieTitle;
-    card.appendChild(cardTitle);
-    card.appendChild(cardImg);
-    cardSection.appendChild(card);
+      res.items.forEach((element, index) => {
+        if (index <= 8) {
+          const { title: movieTitle, image: moviePoster } = element;
+
+          //div card
+          let card = document.createElement("div");
+          card.classList.add("card");
+          // card img
+          let cardImg = document.createElement("img");
+          cardImg.src = moviePoster;
+          cardImg.classList.add("card-img");
+          // card title
+          let cardTitle = document.createElement("h4");
+          cardTitle.classList.add("crad-title");
+
+          cardTitle.innerText = movieTitle;
+          card.appendChild(cardTitle);
+          card.appendChild(cardImg);
+          cardSection.appendChild(card);
         }
+      });
     });
-  });
 });
-  
