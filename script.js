@@ -17,6 +17,8 @@ searchIcon.addEventListener("click", () => {
   if (!searchInputValue) return;
   let loaderIcon = document.querySelector(".loader-section");
   loaderIcon.style.display = "flex";
+  cardSection.style.display="none";
+  officeSection.style.display="none";
   fetch(`https://imdb-api.com/en/API/Search/k_bp53c8qv/${searchInputValue}`)
     .then((res) => res.json())
     .then((res) => {
@@ -37,7 +39,7 @@ searchIcon.addEventListener("click", () => {
           } = res;
           loaderIcon.style.display = "none";
           cardSection.style.display="none";
-          officeSection.style.display="none"
+          officeSection.style.display="none";
           let movieDetailsElement = document.querySelector(".movie-details");
           movieDetailsElement.innerHTML = "";
           let movieTitleDiv = document.createElement("div");
