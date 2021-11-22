@@ -12,6 +12,7 @@ and the app show the top 9 Box Office movies.
 
 ## - services does the application offer to the user:
 
+- shows the top 10 box office movies.
 - A brief summary of the film.
 - Time of the film.
 - Movie's release year.
@@ -54,11 +55,10 @@ https://gsg-cf04.github.io/salma-nebal-movie-API-Task/
 6. To run the project locally, use Live server.
 
 ## Done by :
-
----
- 
 - Salma Issa .
 - Neebal Hamdan.
+
+
 ## Design :
 
 ---
