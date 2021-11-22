@@ -3,11 +3,8 @@
 ### Before you watch the movie, get a fair overview of what it's about.
 
 You can use the app to look for a movie. The app includes the movie's description, runtime, and release year.
-<<<<<<< HEAD
-and The app shows the top 10 box office movies. 
-=======
 and the app show the top 9 Box Office movies.
->>>>>>> 379a8757c700ffcc08fa035bc95978068c55bafc
+
 ## Prerequisite Knowledge
 
 ---
@@ -60,15 +57,9 @@ https://gsg-cf04.github.io/salma-nebal-movie-API-Task/
 
 ## Done by :
 
----
- 
 - Salma Issa .
-<<<<<<< HEAD
 - Nebal Hamdan.
 
-=======
-- Neebal Hamdan.
->>>>>>> 379a8757c700ffcc08fa035bc95978068c55bafc
 ## Design :
 
 ---
